@@ -1,8 +1,10 @@
 package com.springBoot.test;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.embedded.ConfigurableEmbeddedServletContainer;
 import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
@@ -16,6 +18,8 @@ import org.springframework.context.annotation.Configuration;
 @Configuration//配置控制
 @EnableAutoConfiguration//启用自动控制
 @ComponentScan//组件扫描
+@SpringBootApplication// Spring Boot 应用的标识
+@MapperScan("com.springBoot.test.dao")// mapper 接口类扫描包配置
 public class ApplicationLancher extends SpringBootServletInitializer implements EmbeddedServletContainerCustomizer {
 
     @Value("${port}")

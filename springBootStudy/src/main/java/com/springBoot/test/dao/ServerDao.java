@@ -1,14 +1,14 @@
 package com.springBoot.test.dao;
 
 import com.springBoot.test.model.XsgServer;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 /**
  * Created by xiaojun.zhang on 2016/3/26.
  */
 @Repository
-public interface ServerDao extends CrudRepository<XsgServer,Long> {
+public interface ServerDao {
+        //extends CrudRepository<XsgServer,Long> {
 
     /**
      * 这里的方法名称有规则

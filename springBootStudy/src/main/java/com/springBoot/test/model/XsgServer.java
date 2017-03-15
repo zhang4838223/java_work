@@ -7,27 +7,27 @@ import java.io.Serializable;
 /**
  * Created by xiaojun.zhang on 2016/3/26.
  */
-@Entity
-@Table(name="game_server")
+//@Entity
+//@Table(name="game_server")
 public class XsgServer implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="id",nullable = false)
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.AUTO)
+//    @Column(name="id",nullable = false)
     private int id;
-    @Column(name="show_id",nullable = false)
+//    @Column(name="show_id",nullable = false)
     private int showId;
-    @Column(name="host",nullable = false)
+//    @Column(name="host",nullable = false)
     private String host;
-    @Column(name="is_new",nullable = false)
+//    @Column(name="is_new",nullable = false)
     private boolean isNew;
-    @Column(name="name",nullable = false)
+//    @Column(name="name",nullable = false)
     private String name;
-    @Column(name="cp_show_only",nullable = false)
+//    @Column(name="cp_show_only",nullable = false)
     private boolean isCpShowOnly;
-    @Column(name="cp_enter_only",nullable = false)
+//    @Column(name="cp_enter_only",nullable = false)
     private boolean isCpEnterOnly;
-    @Column(name="online_limit",nullable = false)
+//    @Column(name="online_limit",nullable = false)
     private int onlineLimit;
 
     public XsgServer() { }

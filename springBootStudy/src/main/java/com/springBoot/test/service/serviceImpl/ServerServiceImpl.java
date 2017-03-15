@@ -12,19 +12,20 @@ import java.util.List;
 /**
  * Created by xiaojun.zhang on 2016/3/26.
  */
-@Service
+//@Service
 public class ServerServiceImpl implements ServerService {
 
-    @Autowired
+//    @Autowired
     private ServerDao serverDao;
 
-    @Override
+//    @Override
     public List<XsgServer> findAll() {
-        Iterable<XsgServer> all = serverDao.findAll();
-        List<XsgServer> list = new ArrayList<XsgServer>();
-        if (all != null && all.iterator().hasNext()){
-            list.add(all.iterator().next());
-        }
-        return list;
+//        Iterable<XsgServer> all = serverDao.findAll();
+//        List<XsgServer> list = new ArrayList<XsgServer>();
+//        if (all != null && all.iterator().hasNext()){
+//            list.add(all.iterator().next());
+//        }
+//        return list;
+        return null;
     }
 }

@@ -18,18 +18,18 @@ import java.util.List;
 @RequestMapping("/gameServer")
 public class GameServerController {
 
-    @Autowired
-    private ServerService serverService;
-    @RequestMapping("/index")
-    public String index(Model model){
-        model.addAttribute("name","lisi");
-        return "index";//src/main/resources/templates/
-    }
-
-    @RequestMapping("/serverList")
-    public String findServerList(Model model){
-        List<XsgServer> result = serverService.findAll();
-        model.addAttribute("servers",result);
-        return "serverList";//需要在默认的模板文件夹src/main/resources/templates/目录下添加一个模板文件serverList.html
-    }
+//    @Autowired
+//    private ServerService serverService;
+//    @RequestMapping("/index")
+//    public String index(Model model){
+//        model.addAttribute("name","lisi");
+//        return "index";//src/main/resources/templates/
+//    }
+//
+//    @RequestMapping("/serverList")
+//    public String findServerList(Model model){
+//        List<XsgServer> result = serverService.findAll();
+//        model.addAttribute("servers",result);
+//        return "serverList";//需要在默认的模板文件夹src/main/resources/templates/目录下添加一个模板文件serverList.html
+//    }
 }
