@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.springBoot.test.dao.BatchDao" >
+  <resultMap id="BaseResultMap" type="com.springBoot.test.model.Batch" >
+    <id column="ID" property="id" jdbcType="BIGINT" />
+    <result column="BILL_TYPE" property="billType" jdbcType="INTEGER" />
+    <result column="BILL_ID" property="billId" jdbcType="BIGINT" />
+    <result column="BILL_CODE" property="billCode" jdbcType="VARCHAR" />
+    <result column="RELATE_BILL_ID" property="relateBillId" jdbcType="BIGINT" />
+    <result column="RELATE_BILL_CODE" property="relateBillCode" jdbcType="VARCHAR" />
+    <result column="BILL_RELATION_ID" property="billRelationId" jdbcType="BIGINT" />
+    <result column="ADDED_BY" property="addedBy" jdbcType="BIGINT" />
+    <result column="LAST_MODIFIED_BY" property="lastModifiedBy" jdbcType="BIGINT" />
+    <result column="ADDED_TIME" property="addedTime" jdbcType="TIMESTAMP" />
+    <result column="LAST_MODIFIED_TIME" property="lastModifiedTime" jdbcType="TIMESTAMP" />
+    <result column="LAST_MODIFIED_IP" property="lastModifiedIp" jdbcType="VARCHAR" />
+    <result column="VALID" property="valid" jdbcType="VARCHAR" />
+  </resultMap>
+
+  <resultMap id="VOResultMap" type="com.springBoot.test.model.StockJournalVo" >
+    <id column="id" property="stockJournalItemId" jdbcType="BIGINT" />
+    <result column="bill_type" property="billType" jdbcType="INTEGER" />
+    <result column="bill_id" property="billId" jdbcType="BIGINT" />
+    <result column="bill_code" property="billCode" jdbcType="VARCHAR" />
+    <result column="relate_bill_id" property="relateBillId" jdbcType="BIGINT" />
+    <result column="relate_bill_code" property="relateBillCode" jdbcType="VARCHAR" />
+    <result column="last_modified_time" property="lastModifiedTime" jdbcType="TIMESTAMP" />
+    <result column="bill_relation_id" property="billRelationId" jdbcType="BIGINT" />
+    <result column="stock_journal_id" property="stockJournalId" jdbcType="BIGINT" />
+    <result column="journal_type" property="journalType" jdbcType="INTEGER" />
+    <result column="sku_id" property="skuId" jdbcType="BIGINT" />
+    <result column="good_type" property="goodType" jdbcType="INTEGER" />
+    <result column="increment_quantity" property="incrementQuantity" jdbcType="INTEGER" />
+    <result column="increment_weight" property="incrementWeight" jdbcType="INTEGER" />
+    <result column="stock_status" property="stockStatus" jdbcType="INTEGER" />
+    <result column="calculation_mode" property="calCulationMode" jdbcType="INTEGER" />
+    <result column="warehouse_id" property="warehouseId" jdbcType="BIGINT" />
+    <result column="warehouse_name" property="warehouseName" jdbcType="VARCHAR" />
+    <result column="investor_Id" property="investorId" jdbcType="BIGINT" />
+    <result column="investor_name" property="investorName" jdbcType="VARCHAR" />
+    <result column="stock_owner_id" property="stockOwnerId" jdbcType="BIGINT" />
+    <result column="stock_owner_name" property="stockOwnerName" jdbcType="VARCHAR" />
+    <result column="delivery_Owner_Id" property="deliveryOwnerId" jdbcType="BIGINT" />
+    <result column="delivery_Owner_Name" property="deliveryOwnerName" jdbcType="VARCHAR" />
+    <result column="org_Title_Id" property="orgTitleId" jdbcType="BIGINT" />
+    <result column="production_Batch" property="productionBatch" jdbcType="VARCHAR" />
+    <result column="package_No" property="packageNo" jdbcType="VARCHAR" />
+    <result column="batch_Stock_Id" property="batchStockId" jdbcType="BIGINT" />
+    <result column="item_Code" property="itemCode" jdbcType="BIGINT" />
+    <result column="added_By" property="addedBy" jdbcType="BIGINT" />
+    <result column="added_Time" property="addedTime" jdbcType="TIMESTAMP" />
+    <result column="valid" property="valid" jdbcType="VARCHAR" />
+
+    <result column="bh_Bill_Id" property="bhBillId" jdbcType="BIGINT" />
+    <result column="bh_Bill_Code" property="bhBillCode" jdbcType="VARCHAR" />
+    <result column="cy_Bill_Id" property="cyBillId" jdbcType="BIGINT" />
+    <result column="cy_Bill_Code" property="cyBillCode" jdbcType="VARCHAR" />
+    <result column="rk_Bill_Id" property="rkBillId" jdbcType="BIGINT" />
+    <result column="rk_Bill_Code" property="rkBillCode" jdbcType="VARCHAR" />
+  </resultMap>
+
+  <sql id="Base_Column_List" >
+    ID, BILL_TYPE, BILL_ID, BILL_CODE, RELATE_BILL_ID, RELATE_BILL_CODE, BILL_RELATION_ID, 
+    ADDED_BY, LAST_MODIFIED_BY, ADDED_TIME, LAST_MODIFIED_TIME, LAST_MODIFIED_IP, VALID
+  </sql>
+
+  <sql id="Vo_Column_List" >
+    i.id, bill_type, bill_id, bill_code, relate_bill_id, relate_bill_code, i.last_modified_time,
+    bill_relation_id, stock_journal_id, journal_type, sku_id, good_type, increment_quantity,
+    stock_status, calculation_mode, warehouse_id, warehouse_name, investor_Id, investor_name,
+    stock_owner_name, delivery_Owner_Id, delivery_Owner_Name, org_Title_Id, production_Batch,
+    batch_Stock_Id, item_Code, i.added_By, i.added_Time, i.valid,package_No,stock_owner_id,increment_weight,
+    bh_Bill_Id, bh_Bill_Code, cy_Bill_Id, cy_Bill_Code, rk_Bill_Id,rk_Bill_Code
+  </sql>
+
+  <sql id="Base_Query_Column_List" >
+    <if test="billType != null and billType != 0" >
+      and  j.bill_type = #{billType}
+    </if>
+    <if test="billId != null and billId != 0" >
+      and  j.bill_id = #{billId}
+    </if>
+    <if test="billCode != null and billCode != ''" >
+      and  j.bill_code = #{billCode}
+    </if>
+    <if test="relateBillId != null and relateBillId != 0" >
+      and  j.relate_bill_id = #{relateBillId}
+    </if>
+    <if test="relateBillCode != null and relateBillCode != ''" >
+      and  j.relate_bill_code = #{relateBillCode}
+    </if>
+    <if test="billRelationId != null and billRelationId != 0">
+      and j.bill_relation_id = #{billRelationId},
+    </if>
+    <if test="journalType != null" >
+      and  i.journal_type = #{journalType}
+    </if>
+    <if test="skuId != null and skuId != 0" >
+      and  i.sku_id = #{skuId}
+    </if>
+    <if test="goodType != null and goodType != 0" >
+      and  i.good_type = #{goodType}
+    </if>
+    <if test="incrementQuantity != null" >
+      and  i.increment_quantity = #{incrementQuantity}
+    </if>
+    <if test="incrementWeight != null" >
+      and  i.increment_weight = #{incrementWeight}
+    </if>
+    <if test="stockStatus != null" >
+      and  i.stock_status = #{stockStatus}
+    </if>
+    <if test="calCulationMode != null" >
+      and  i.calculation_mode = #{calCulationMode}
+    </if>
+    <if test="warehouseId != null" >
+      and  i.warehouse_id = #{warehouseId}
+    </if>
+    <if test="warehouseName != null" >
+      and  i.warehouse_name = #{warehouseName}
+    </if>
+    <if test="investorId != null" >
+      and  i.investor_id = #{investorId}
+    </if>
+    <if test="investorName != null" >
+      and  i.investor_name = #{investorName}
+    </if>
+    <if test="bhBillId != null" >
+      and  r.bh_bill_id = #{bhBillId}
+    </if>
+    <if test="bhBillCode != null and bhBillCode !=''" >
+      and  r.bh_bill_code = #{bhBillCode}
+    </if>
+    <if test="cyBillId != null" >
+      and  r.cy_bill_id = #{cyBillId}
+    </if>
+    <if test="cyBillCode != null and cyBillCode != ''" >
+      and  r.cy_bill_code = #{cyBillCode}
+    </if>
+    <if test="rkBillId != null" >
+      and  r.rk_bill_id = #{rkBillId}
+    </if>
+    <if test="rkBillCode != null and rkBillCode != ''" >
+      and  r.rk_bill_code = #{rkBillCode}
+    </if>
+  </sql>
+
+  <!--根据条件分组查询流水数据-->
+  <select id="getStockJournalList" parameterType="com.springBoot.test.model.StockJournalBo" resultMap="VOResultMap">
+    SELECT
+    <include refid="Vo_Column_List" />
+    FROM stock_journal j
+    LEFT JOIN stock_journal_item i on i.stock_journal_id = j.id
+    LEFT JOIN bill_relation r on r.id = j.bill_relation_id
+    WHERE 1 = 1
+    <include refid="Base_Query_Column_List" />
+    ORDER BY i.id DESC
+    LIMIT #{start},#{rows}
+  </select>
+
+  <!-- 查询符合条件的流水数据总量 -->
+  <select id="getStockJournalCount"  parameterType="com.springBoot.test.model.StockJournalBo"
+          resultType="Long">
+    SELECT count(1)
+    FROM stock_journal j
+    LEFT JOIN stock_journal_item i on i.stock_journal_id = j.id
+    LEFT JOIN bill_relation r on r.id = j.bill_relation_id
+    WHERE 1 = 1
+    <include refid="Base_Query_Column_List" />
+  </select>
+  <!--更改流水明细有效状态-->
+  <update id="updateValidStatus" parameterType="com.springBoot.test.model.StockJournalBo">
+    update  stock_journal_item set valid= #{valid},
+      last_modified_time = #{lastModifiedTime},
+      last_modified_by = #{lastModifiedBy}
+    <where>
+      Id = #{stockJournalItemId}
+    </where>
+  </update>
+
+  <!--更改流水明细有效状态-->
+  <select id="getStockJournalItemById" parameterType="java.lang.Long" resultMap="VOResultMap">
+    SELECT * FROM stock_journal_item WHERE Id = #{id}
+  </select>
+</mapper>
