@@ -36,10 +36,9 @@ public class StockController {
 
     @RequestMapping(value = "/item/{id}" ,method = RequestMethod.GET)
     @ResponseBody
-    public String getByItemId(@PathVariable("id") Long id){
+    public StockJournalVo getByItemId(@PathVariable("id") Long id){
 
         StockJournalVo vo = stockJournalService.queryStockJournalItemById(id);
-        Gson gson = new Gson();
-        return gson.toJson(vo);//src/main/resources/templates/
+        return vo;//src/main/resources/templates/
     }
 }
