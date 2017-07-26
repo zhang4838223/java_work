@@ -131,13 +131,30 @@
 
                     </td>
                     <td>
-                        <button type="button" class="btn btn-lg btn-info" id="submit-btn">提交</button>
+                        <button type="button" class="btn btn-lg btn-info" id="submit-btn" data-target="#myModal">提交</button>
                     </td>
                 </tr>
 
             </tbody>
         </table>
     </form>
+</div>
+
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <#--<h4 class="modal-title" id="myModalLabel">模态框（Modal）标题</h4>-->
+            </div>
+            <div class="modal-body alert alert-success" role="alert">提交成功</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <#--<button type="button" class="btn btn-primary">提交更改</button>-->
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
 </div>
 </body>
 <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>

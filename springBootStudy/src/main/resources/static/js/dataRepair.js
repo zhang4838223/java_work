@@ -4,8 +4,8 @@
 $(function () {
 
     $("#submit-btn").click(function () {
+        $("#submit-btn").attr('disabled',"disabled");
         if(confirm("是否确认提交?")){
-            $("#submit-btn").attr('disabled',"disabled");
             save();
             $("#submit-btn").removeAttr("disabled");
         }
@@ -28,7 +28,8 @@ function save(){
         processData : true,
         data : $("#repairBatchStock").serialize(),
         success : function() {
-            alert("成功");
+            //alert("成功");
+            $('#myModal').modal();
         }
     });
 }
