@@ -149,7 +149,7 @@
 
                     </td>
                     <td>
-                        <button type="submit" class="btn btn-lg btn-info" id="submit-btn" data-target="#myModal">提交</button>
+                        <button type="button" class="btn btn-lg btn-info" id="submit-btn" data-target="#myModal">提交</button>
                     </td>
                 </tr>
 

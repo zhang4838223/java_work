@@ -38,6 +38,7 @@ function save(){
 function validate() {
     $('#repairBatchStock').bootstrapValidator({
         message: 'input number please!',
+        submitButtons: '#submit-btn',
         feedbackIcons: {
             valid: 'glyphicon glyphicon-ok',
             invalid: 'glyphicon glyphicon-remove',

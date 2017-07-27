@@ -21,6 +21,6 @@ public class DataRepairController {
     @RequestMapping("/batchStock")
     @ResponseBody
     public String repairBatchStock( BatchStockRepairPo batchStockRepairPo){
-        return "dataRepair";//需要在默认的模板文件夹src/main/resources/templates/目录下添加一个模板文件dataRepair.ftl
+        return "SUCC";//需要在默认的模板文件夹src/main/resources/templates/目录下添加一个模板文件dataRepair.ftl
     }
 }
