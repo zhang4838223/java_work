@@ -66,7 +66,11 @@
                         BatchStockID:
                     </td>
                     <td>
-                        <input type="text" class="form-control" placeholder="批次库存id" name="BatchStockID" aria-describedby="basic-addon1">
+                        <div class="form-group">
+                            <div class="col-lg-5">
+                                <input type="text" class="form-control" placeholder="批次库存id" name="BatchStockID"/>
+                            </div>
+                        </div>
                     </td>
                 </tr>
                 <tr>
@@ -74,7 +78,9 @@
                         Quantity:
                     </td>
                     <td>
-                        <input type="text" class="form-control" placeholder="入库数量" name="Quantity" value="0" aria-describedby="basic-addon1">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="入库数量" name="Quantity" value="0" aria-describedby="basic-addon1">
+                        </div>
                     </td>
                 </tr>
                 <tr>
@@ -82,7 +88,9 @@
                         Weight:
                     </td>
                     <td>
-                        <input type="text" class="form-control" placeholder="入库重量" name="Weight" value="0" aria-describedby="basic-addon1">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="入库重量" name="Weight" value="0" aria-describedby="basic-addon1">
+                        </div>
                     </td>
                 </tr>
 
@@ -91,7 +99,9 @@
                         StockQuantity:
                     </td>
                     <td>
-                        <input type="text" class="form-control" placeholder="库存数量" name="StockQuantity" value="0" aria-describedby="basic-addon1">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="库存数量" name="StockQuantity" value="0" aria-describedby="basic-addon1">
+                        </div>
                     </td>
                 </tr>
                 <tr>
@@ -99,7 +109,9 @@
                         StockWeight:
                     </td>
                     <td>
-                        <input type="text" class="form-control" placeholder="库存数量" name="StockWeight" value="0" aria-describedby="basic-addon1">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="库存重量" name="StockWeight" value="0" aria-describedby="basic-addon1">
+                        </div>
                     </td>
                 </tr>
                 <tr>
@@ -107,7 +119,9 @@
                         AvailableQuantity:
                     </td>
                     <td>
-                        <input type="text" class="form-control" placeholder="可售数量" name="AvailableQuantity" value="0" aria-describedby="basic-addon1">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="可售数量" name="AvailableQuantity" value="0" aria-describedby="basic-addon1">
+                        </div>
                     </td>
                 </tr>
                 <tr>
@@ -115,7 +129,9 @@
                         AvailableWeight:
                     </td>
                     <td>
-                        <input type="text" class="form-control" placeholder="可售重量" name="AvailableWeight" value="0" aria-describedby="basic-addon1">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="可售重量" name="AvailableWeight" value="0" aria-describedby="basic-addon1">
+                        </div>
                     </td>
                 </tr>
                 <tr>
@@ -123,7 +139,9 @@
                         Remark:
                     </td>
                     <td>
-                        <input type="text" class="form-control" placeholder="备注说明" name="Remark" aria-describedby="basic-addon1">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="备注说明" name="Remark" aria-describedby="basic-addon1">
+                        </div>
                     </td>
                 </tr>
                 <tr>
@@ -131,7 +149,7 @@
 
                     </td>
                     <td>
-                        <button type="button" class="btn btn-lg btn-info" id="submit-btn" data-target="#myModal">提交</button>
+                        <button type="submit" class="btn btn-lg btn-info" id="submit-btn" data-target="#myModal">提交</button>
                     </td>
                 </tr>
 
@@ -157,7 +175,9 @@
     </div><!-- /.modal -->
 </div>
 </body>
+<link href="https://cdn.bootcss.com/bootstrap-validator/0.5.3/css/bootstrapValidator.css" type="text/css" rel="stylesheet">
 <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap-validator/0.5.2/js/bootstrapValidator.js"></script>
 <script src="/bootstrap/js/bootstrap.min.js"></script>
 <script src="/js/dataRepair.js"></script>
 </html>
