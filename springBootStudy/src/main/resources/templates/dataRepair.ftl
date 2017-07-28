@@ -167,10 +167,10 @@
                 <#--<h4 class="modal-title" id="myModalLabel">模态框（Modal）标题</h4>-->
             </div>
             <div class="modal-body alert alert-success" role="alert">提交成功</div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                <#--<button type="button" class="btn btn-primary">提交更改</button>-->
-            </div>
+            <#--<div class="modal-footer">-->
+                <#--<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>-->
+                <#--&lt;#&ndash;<button type="button" class="btn btn-primary">提交更改</button>&ndash;&gt;-->
+            <#--</div>-->
         </div><!-- /.modal-content -->
     </div><!-- /.modal -->
 </div>
