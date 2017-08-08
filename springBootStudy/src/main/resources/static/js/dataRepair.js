@@ -48,16 +48,16 @@ function validate() {
             BatchStockID: {
                 message: '批次库存id验证失败',
                 validators: {
-                    //notEmpty: {
-                    //    message: '用户名不能为空'
-                    //},
+                    notEmpty: {
+                        message: '批次库存id不能为空'
+                    },
                     //stringLength: {
                     //    min: 6,
                     //    max: 18,
                     //    message: '用户名长度必须在6到18位之间'
                     //},
                     regexp: {
-                        regexp: /^[0-9]+$/,
+                        regexp: /^[1-9]+$/,
                         message: '<span style="color: #ff0000;">批次库存id只能是数字</span>'
                     }
                 }

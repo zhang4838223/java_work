@@ -26,7 +26,8 @@ public class DataRepairController {
     @RequestMapping("/batchStock")
     @ResponseBody
     public String repairBatchStock( BatchStockRepairPo batchStockRepairPo){
-        String result = HttpUtil.httpPostByCatchException(TEST_URL, TextUtils.toJson(batchStockRepairPo), CONTRACT_INFO);
+//        String result = HttpUtil.httpPostByCatchException(TEST_URL, TextUtils.toJson(batchStockRepairPo), CONTRACT_INFO);
+        System.out.println(batchStockRepairPo);
         return "SUCC";//需要在默认的模板文件夹src/main/resources/templates/目录下添加一个模板文件dataRepair.ftl
     }
 }
