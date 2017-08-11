@@ -87,7 +87,7 @@
 
 
 
-        <table tableName="TBATCH">
+        <table tableName="TBATCH_STOCK_ITEM">
 
             <!-- optional   , only for mybatis3 runtime
                  自动生成的键值（identity,或者序列值）
